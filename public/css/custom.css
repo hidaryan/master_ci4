@@ -1,0 +1,46 @@
+.form-inline label {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: left;
+    margin-bottom: 0;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+.chosen-container-single .chosen-single {
+    border: 1px solid #e5e6e7;
+    font-size: 0.8rem;
+    padding: 2px 12px;
+}
+
+.form-control {
+    font-size: 0.8rem;
+}
+
+
+.avatar-circle {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(207, 210, 223);
+    text-align: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+  }
+
+  .initials {
+    position: relative;
+    top: 14px; /* 25% of parent */
+    font-size: 25px; /* 50% of parent */
+    line-height: 25px; /* 50% of parent */
+    color: #1585C9;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+  }

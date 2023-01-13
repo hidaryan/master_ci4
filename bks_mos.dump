@@ -1,0 +1,403 @@
+-- MySQL dump 10.13  Distrib 5.7.23, for macos10.13 (x86_64)
+--
+-- Host: 127.0.0.1    Database: bks_mos
+-- ------------------------------------------------------
+-- Server version	5.5.5-10.4.17-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `auth_activation_attempts`
+--
+
+DROP TABLE IF EXISTS `auth_activation_attempts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_activation_attempts` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(255) NOT NULL,
+  `user_agent` varchar(255) NOT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_activation_attempts`
+--
+
+LOCK TABLES `auth_activation_attempts` WRITE;
+/*!40000 ALTER TABLE `auth_activation_attempts` DISABLE KEYS */;
+INSERT INTO `auth_activation_attempts` VALUES (1,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','58708968949387d54a51f4077b169850','2022-10-25 22:11:14'),(2,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','','2022-10-26 22:47:50'),(3,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','1b89efdc371553297a4e71da7f364480','2022-10-27 19:40:46'),(4,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','','2022-10-28 02:58:49'),(5,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','','2022-10-28 02:58:58'),(6,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','','2022-10-28 02:59:17'),(7,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','','2022-10-28 02:59:26'),(8,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','51afe4a2d2497b1ef732055f42d9db67','2022-10-28 03:09:34'),(9,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','2272d0b719648a8e0088a529a96ee6e7','2022-10-28 03:17:52'),(10,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','8d8729cf88cdbd4126ad8df35290bf5a','2022-10-28 03:25:37'),(11,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','8d8729cf88cdbd4126ad8df35290bf5a','2022-10-28 03:25:53'),(12,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','6e9d7842514a35ec24bea1e73df923c2','2022-10-28 03:27:08'),(13,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','2dfa3282f29fc5a1414cb491b6588459','2022-10-28 03:34:22'),(14,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','4d59eb5dc463be7829ade1e24691acf5','2022-10-28 03:43:38'),(15,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','028d9128d90ac2f1d95497fa6248fa43','2022-10-28 03:54:33'),(16,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','aff17f84c25ddc51bd34a7161b77215c','2022-10-28 03:58:11'),(17,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','3cbfa2fa8c1050b5f9a8b3f25d29e3b3','2022-10-28 04:30:54'),(18,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','9669c9b20849fccb8c512297c35b55a8','2022-10-28 04:32:50'),(19,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c88d64c186868d2863e4aedb2aef7aa6','2022-10-28 04:34:11'),(20,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','54baf231bc98b7f35e953a3c0bea4f04','2022-10-28 04:48:02'),(21,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','b2068e2d037cc6dba510d84539fecfa1','2022-10-28 10:42:42'),(22,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','7cacf394b038d57f1aa3400ad1baa170','2022-10-30 21:58:58'),(23,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','22db05d4e7b19618bebafb1d0d011fb1','2022-10-31 01:10:41'),(24,'::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','a649d3e619cef1aa7be2181efd12a2f8','2022-10-31 01:12:40');
+/*!40000 ALTER TABLE `auth_activation_attempts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_groups`
+--
+
+DROP TABLE IF EXISTS `auth_groups`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_groups` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_groups`
+--
+
+LOCK TABLES `auth_groups` WRITE;
+/*!40000 ALTER TABLE `auth_groups` DISABLE KEYS */;
+INSERT INTO `auth_groups` VALUES (1,'administrator','group admin, can access all menu'),(2,'operator','Operator (Sales)'),(3,'supervisor','Supervisor (Kepala Pemasaran)');
+/*!40000 ALTER TABLE `auth_groups` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_groups_permissions`
+--
+
+DROP TABLE IF EXISTS `auth_groups_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_groups_permissions` (
+  `group_id` int(11) unsigned NOT NULL DEFAULT 0,
+  `permission_id` int(11) unsigned NOT NULL DEFAULT 0,
+  KEY `auth_groups_permissions_permission_id_foreign` (`permission_id`),
+  KEY `group_id_permission_id` (`group_id`,`permission_id`),
+  CONSTRAINT `auth_groups_permissions_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `auth_groups` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `auth_groups_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `auth_permissions` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_groups_permissions`
+--
+
+LOCK TABLES `auth_groups_permissions` WRITE;
+/*!40000 ALTER TABLE `auth_groups_permissions` DISABLE KEYS */;
+INSERT INTO `auth_groups_permissions` VALUES (1,900),(1,910),(1,920),(2,900),(2,920);
+/*!40000 ALTER TABLE `auth_groups_permissions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_groups_users`
+--
+
+DROP TABLE IF EXISTS `auth_groups_users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_groups_users` (
+  `group_id` int(11) unsigned NOT NULL DEFAULT 0,
+  `user_id` int(11) unsigned NOT NULL DEFAULT 0,
+  KEY `auth_groups_users_user_id_foreign` (`user_id`),
+  KEY `group_id_user_id` (`group_id`,`user_id`),
+  CONSTRAINT `auth_groups_users_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `auth_groups` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `auth_groups_users_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_groups_users`
+--
+
+LOCK TABLES `auth_groups_users` WRITE;
+/*!40000 ALTER TABLE `auth_groups_users` DISABLE KEYS */;
+INSERT INTO `auth_groups_users` VALUES (1,10001),(1,10018),(1,10020),(1,10021),(1,10024),(1,10025),(1,10026),(1,10027),(2,9991),(2,9993);
+/*!40000 ALTER TABLE `auth_groups_users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_logins`
+--
+
+DROP TABLE IF EXISTS `auth_logins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_logins` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `user_id` int(11) unsigned DEFAULT NULL,
+  `date` datetime NOT NULL,
+  `success` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `email` (`email`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_logins`
+--
+
+LOCK TABLES `auth_logins` WRITE;
+/*!40000 ALTER TABLE `auth_logins` DISABLE KEYS */;
+INSERT INTO `auth_logins` VALUES (1,'::1','reey.an.hid22ayat@gmail.com',6,'2022-10-25 21:59:19',1),(2,'::1','reey.an.hid22ayat@gmail.com',6,'2022-10-25 22:00:50',0),(3,'::1','reey.an.hid22ayat@gmail.com',6,'2022-10-25 22:01:06',1),(4,'::1','reey.an.hidayat@gmail.com',8,'2022-10-25 22:11:53',1),(5,'::1','reey.an.hidayat@gmail.com',8,'2022-10-25 22:33:51',1),(6,'::1','reey.an.hidayat@gmail.com',8,'2022-10-25 22:44:06',1),(7,'::1','reey.an.hidayat@gmail.com',8,'2022-10-25 22:49:09',1),(8,'::1','reey.an.hidayat@gmail.com',NULL,'2022-10-25 23:28:36',0),(9,'::1','reey.an.hidayat@gmail.com',8,'2022-10-25 23:28:46',1),(10,'::1','reey.an.hidayat@gmail.com',NULL,'2022-10-25 23:32:22',0),(11,'::1','reey.an.hidayat@gmail.com',NULL,'2022-10-25 23:32:31',0),(12,'::1','reey.an.hidayat@gmail.com',8,'2022-10-25 23:32:41',1),(13,'::1','reey.an.hidayat@gmail.com',8,'2022-10-26 01:24:55',1),(14,'::1','reey.an.hidayat@gmail.com',8,'2022-10-26 01:26:59',1),(15,'::1','reey.an.hidayat@gmail.com',8,'2022-10-26 01:36:29',1),(16,'::1','reey.an.hidayat@gmail.com',8,'2022-10-26 03:28:46',1),(17,'::1','reey.an.hidayat@gmail.com',8,'2022-10-26 03:31:43',1),(18,'::1','reey.an.hidayat@gmail.com',8,'2022-10-26 03:33:13',1),(19,'::1','reey.an.hidayat@gmail.com',8,'2022-10-26 03:40:53',1),(20,'::1','asdasd123',NULL,'2022-10-26 03:42:21',0),(21,'::1','reey.an.hidayat@gmail.com',8,'2022-10-26 03:47:03',1),(22,'::1','ryanhidayat@bankkalse.co.id',9991,'2022-10-26 03:52:16',1),(23,'::1','admin',NULL,'2022-10-26 04:21:52',0),(24,'::1','admin',NULL,'2022-10-26 04:22:17',0),(25,'::1','adminmos@bankkalse.co.id',9999,'2022-10-26 04:22:57',1),(26,'::1','admin_sales1',NULL,'2022-10-26 04:26:56',0),(27,'::1','ryanhidayat@bankkalse.co.id',9991,'2022-10-26 04:27:05',1),(28,'::1','adminmos@bankkalse.co.id',9999,'2022-10-26 04:28:10',1),(29,'::1','ryanhidayat@bankkalse.co.id',9991,'2022-10-26 04:39:24',1),(30,'::1','ryanhidayat@bankkalse.co.id',9991,'2022-10-26 04:39:53',1),(31,'::1','admin',NULL,'2022-10-26 04:41:46',0),(32,'::1','admin',NULL,'2022-10-26 04:41:53',0),(33,'::1','adminmos@bankkalse.co.id',9999,'2022-10-26 04:42:02',1),(34,'::1','ryanhidayat@bankkalse.co.id',9991,'2022-10-26 04:45:16',1),(35,'::1','admin',NULL,'2022-10-26 09:16:36',0),(36,'::1','adminmos@bankkalse.co.id',9999,'2022-10-26 09:16:45',1),(37,'::1','ryanhidayat@bankkalse.co.id',9991,'2022-10-26 09:34:34',1),(38,'::1','adminmos@bankkalse.co.id',9999,'2022-10-26 10:14:23',1),(39,'::1','admin_sales1',NULL,'2022-10-26 10:15:49',0),(40,'::1','ryanhidayat@bankkalse.co.id',9991,'2022-10-26 10:16:00',1),(41,'::1','ryanhidayat@bankkalse.co.id',9991,'2022-10-26 10:20:57',1),(42,'::1','ryanhidayat@bankkalse.co.id',9991,'2022-10-26 10:22:27',1),(43,'::1','adminmos@bankkalse.co.id',9999,'2022-10-26 10:24:37',1),(44,'::1','admin',NULL,'2022-10-26 19:41:27',0),(45,'::1','adminmos@bankkalse.co.id',9999,'2022-10-26 19:41:33',1),(46,'::1','adminmos@bankkalse.co.id',9999,'2022-10-26 22:19:46',1),(47,'::1','admin',NULL,'2022-10-26 22:44:03',0),(48,'::1','adminmos@bankkalse.co.id',9999,'2022-10-26 22:45:21',1),(49,'::1','adminmos@bankkalse.co.id',9999,'2022-10-26 22:45:57',1),(50,'::1','admin',9999,'2022-10-26 22:46:21',0),(51,'::1','admin',9999,'2022-10-26 22:47:32',0),(52,'::1','reey.an.hidayat@gmail.com',9999,'2022-10-26 22:49:11',1),(53,'::1','admin',NULL,'2022-10-27 02:58:48',0),(54,'::1','reey.an.hidayat@gmail.com',9999,'2022-10-27 02:58:55',1),(55,'::1','reey.an.hidayat@gmail.com',9999,'2022-10-27 09:52:52',1),(56,'::1','reey.an.hidayat@gmail.com',9999,'2022-10-27 19:34:56',1),(57,'::1','it.bankkalsel@gmail.com',NULL,'2022-10-27 19:40:59',0),(58,'::1','reey.an.hidayat@gmail.com',9999,'2022-10-27 19:41:57',1),(59,'::1','admin',NULL,'2022-10-28 01:58:25',0),(60,'::1','reey.an.hidayat@gmail.com',9999,'2022-10-28 01:58:32',1),(61,'::1','reey.an.hid222ayat@gmail.com',9999,'2022-10-28 03:01:10',1),(62,'::1','reey.an.hidayat@gmail.com',10010,'2022-10-28 03:18:29',1),(63,'::1','reey.an.hidayat@gmail.com',10010,'2022-10-28 03:22:35',1),(64,'::1','reey.an.hid222ayat@gmail.com',9999,'2022-10-28 03:24:40',1),(65,'::1','reey.an.hid222ayat@gmail.com',9999,'2022-10-28 03:26:19',1),(66,'::1','reey.an.hid222ayat@gmail.com',9999,'2022-10-28 03:33:20',1),(67,'::1','reey.an.hid222ayat@gmail.com',9999,'2022-10-28 03:34:28',1),(68,'::1','reey.an.hid222ayat@gmail.com',9999,'2022-10-28 03:42:27',1),(69,'::1','reey.an.hid222ayat@gmail.com',9999,'2022-10-28 03:44:00',1),(70,'::1','reey.an.hidayat@gmail.com',10014,'2022-10-28 03:44:20',1),(71,'::1','reey.an.hidayat@gmail.com',NULL,'2022-10-28 03:46:56',0),(72,'::1','reey.an.hidayat@gmail.com',10014,'2022-10-28 03:47:10',1),(73,'::1','reey.an.hidayat@gmail.com',10014,'2022-10-28 03:48:57',1),(74,'::1','reey.an.hid222ayat@gmail.com',9999,'2022-10-28 03:53:44',1),(75,'::1','reey.an.hidayat@gmail.com',10015,'2022-10-28 03:54:57',1),(76,'::1','admin',NULL,'2022-10-28 03:56:49',0),(77,'::1','reey.an.hid222ayat@gmail.com',9999,'2022-10-28 03:56:57',1),(78,'::1','admin',NULL,'2022-10-28 03:57:09',0),(79,'::1','reey.an.hid222ayat@gmail.com',9999,'2022-10-28 03:57:17',1),(80,'::1','reey.an.hidayat@gmail.com',10016,'2022-10-28 03:58:38',1),(81,'::1','reey.an.hidayat@gmail.com',10016,'2022-10-28 03:59:14',1),(82,'::1','reey.an.hidayat@gmail.com',10016,'2022-10-28 03:59:35',1),(83,'::1','reey.an.hidayat@gmail.com',10016,'2022-10-28 04:00:20',1),(84,'::1','admin22',NULL,'2022-10-28 04:08:41',0),(85,'::1','admin222',NULL,'2022-10-28 04:08:57',0),(86,'::1','reey.an.hidayat@gmail.com',NULL,'2022-10-28 04:09:13',0),(87,'::1','reey.an.hidayat@gmail.com',10016,'2022-10-28 04:09:22',1),(88,'::1','admin',NULL,'2022-10-28 04:18:42',0),(89,'::1','admin',NULL,'2022-10-28 04:18:55',0),(90,'::1','admin',NULL,'2022-10-28 04:19:04',0),(91,'::1','admin',NULL,'2022-10-28 04:19:18',0),(92,'::1','admin',NULL,'2022-10-28 04:19:29',0),(93,'::1','reey.an.hidayat@gmail.com',10001,'2022-10-28 04:21:52',1),(94,'::1','reey.an.hidayat@gmail.com',10001,'2022-10-28 04:22:34',1),(95,'::1','reey.an.hidayat@gmail.com',10001,'2022-10-28 04:23:43',1),(96,'::1','reey.an.hidayat@gmail.com',10001,'2022-10-28 04:24:04',1),(97,'::1','reey.an.hidayat@gmail.com',10001,'2022-10-28 04:25:15',1),(98,'::1','farah',NULL,'2022-10-28 04:30:26',0),(99,'::1','farah',10018,'2022-10-28 04:30:37',0),(100,'::1','reey.an.hidayat@gmail.com',10018,'2022-10-28 04:31:04',1),(101,'::1','reey.an.hida2222yat@gmail.com',10018,'2022-10-28 04:33:26',1),(102,'::1','kilo',NULL,'2022-10-28 04:34:33',0),(103,'::1','reey.an.hidayat@gmail.com',10020,'2022-10-28 04:34:42',1),(104,'::1','reey.an.hidayat@gmail.com',10021,'2022-10-28 04:48:12',1),(105,'::1','reey.an.hidayat@gmail.com',10021,'2022-10-28 04:51:46',1),(106,'::1','lola',NULL,'2022-10-28 04:53:37',0),(107,'::1','reey.an.hidayat@gmail.com',10021,'2022-10-28 04:53:45',1),(108,'::1','admin',NULL,'2022-10-28 10:38:03',0),(109,'::1','admin',NULL,'2022-10-28 10:38:09',0),(110,'::1','farah',NULL,'2022-10-28 10:38:19',0),(111,'::1','reey.an.hida2222yat@gmail.com',10018,'2022-10-28 10:38:28',1),(112,'::1','ryanhidayat@bankkalsel.co.id',10022,'2022-10-28 10:42:59',1),(113,'::1','reey.an.hida2222yat@gmail.com',10018,'2022-10-28 11:15:18',1),(114,'::1','farah',NULL,'2022-10-28 11:17:06',0),(115,'::1','reey.an.hida2222yat@gmail.com',10018,'2022-10-28 11:17:15',1),(116,'::1','reey.an.hida2222yat@gmail.com',10018,'2022-10-30 21:55:43',1),(117,'::1','it.bankkalsel@gmail.com',10025,'2022-10-30 21:59:06',1),(118,'::1','reey.an.hida2222yat@gmail.com',10018,'2022-10-31 01:09:16',1),(119,'::1','123asdasd',NULL,'2022-10-31 01:11:06',0),(120,'::1','reey.an.hida2222yat@gmail.com',10018,'2022-10-31 01:11:38',1),(121,'::1','123131231',10027,'2022-10-31 01:12:35',0),(122,'::1','reey.an.hidayat@gmail.com',10027,'2022-10-31 01:12:48',1),(123,'::1','reey.an.hida2222yat@gmail.com',10018,'2022-10-31 04:17:16',1),(124,'::1','farah',NULL,'2022-10-31 09:43:21',0),(125,'::1','reey.an.hida2222yat@gmail.com',10018,'2022-10-31 09:43:27',1),(126,'::1','darah',NULL,'2022-10-31 09:47:06',0),(127,'::1','ibnu',10025,'2022-10-31 09:47:16',0),(128,'::1','reey.an.hida2222yat@gmail.com',10018,'2022-10-31 09:48:58',1);
+/*!40000 ALTER TABLE `auth_logins` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_permissions`
+--
+
+DROP TABLE IF EXISTS `auth_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_permissions` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=922 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_permissions`
+--
+
+LOCK TABLES `auth_permissions` WRITE;
+/*!40000 ALTER TABLE `auth_permissions` DISABLE KEYS */;
+INSERT INTO `auth_permissions` VALUES (900,'users','root menu users'),(910,'manageUser','crud table user'),(911,'manageUser-Add','add table user'),(920,'profileUser','melihat profile user');
+/*!40000 ALTER TABLE `auth_permissions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_reset_attempts`
+--
+
+DROP TABLE IF EXISTS `auth_reset_attempts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_reset_attempts` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `ip_address` varchar(255) NOT NULL,
+  `user_agent` varchar(255) NOT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_reset_attempts`
+--
+
+LOCK TABLES `auth_reset_attempts` WRITE;
+/*!40000 ALTER TABLE `auth_reset_attempts` DISABLE KEYS */;
+INSERT INTO `auth_reset_attempts` VALUES (1,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','9285','2022-10-25 22:12:58'),(2,'','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','','2022-10-25 22:13:00'),(3,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','123','2022-10-25 22:13:20'),(4,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','123','2022-10-25 22:14:20'),(5,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','e20bc2265916b8d2b6711a42c7a0d01e','2022-10-25 22:19:45'),(6,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','e20bc2265916b8d2b6711a42c7a0d01e','2022-10-25 22:19:57'),(7,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','0c7e4e393fa6c51fe7d77a9de710ae80','2022-10-28 03:19:22'),(8,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','0c7e4e393fa6c51fe7d77a9de710ae80','2022-10-28 03:19:56'),(9,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','0c7e4e393fa6c51fe7d77a9de710ae80','2022-10-28 03:20:20'),(10,'','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','0c7e4e393fa6c51fe7d77a9de710ae80','2022-10-28 03:20:21'),(11,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','0c7e4e393fa6c51fe7d77a9de710ae80','2022-10-28 03:21:00'),(12,'','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','0c7e4e393fa6c51fe7d77a9de710ae80','2022-10-28 03:21:03'),(13,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','cd8b0e043561e9be2b0b81379df1bbce','2022-10-28 03:23:32'),(14,'it.bankkalsel@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c90635bf296f9c3c6bd2c3baecc1e1ba','2022-10-28 03:30:48'),(15,'it.bankkalsel@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c90635bf296f9c3c6bd2c3baecc1e1ba','2022-10-28 03:31:00'),(16,'it.bankkalsel@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c90635bf296f9c3c6bd2c3baecc1e1ba','2022-10-28 03:31:11'),(17,'it.bankkalsel@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c90635bf296f9c3c6bd2c3baecc1e1ba','2022-10-28 03:31:22'),(18,'it.bankkalsel@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c90635bf296f9c3c6bd2c3baecc1e1ba','2022-10-28 03:31:50'),(19,'info@bankkalsel.co.id','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c90635bf296f9c3c6bd2c3baecc1e1ba','2022-10-28 03:32:27'),(20,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','7eb4ecf185bf23e880274d7c3b2e0b7a','2022-10-28 03:48:13'),(21,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','7eb4ecf185bf23e880274d7c3b2e0b7a','2022-10-28 03:48:28'),(22,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','7eb4ecf185bf23e880274d7c3b2e0b7a','2022-10-28 03:48:38'),(23,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','7eb4ecf185bf23e880274d7c3b2e0b7a','2022-10-28 03:48:48'),(24,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','3bec59f9426e8ada2444c33f1998a2fb','2022-10-28 03:55:14'),(25,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','3bec59f9426e8ada2444c33f1998a2fb','2022-10-28 03:55:54'),(26,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','f77ed4592a4cb62daae55c2bc876a88e','2022-10-28 04:00:54'),(27,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c2b08a19422072c7a7646150c07b3c20','2022-10-28 04:13:58'),(28,'','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c2b08a19422072c7a7646150c07b3c20','2022-10-28 04:14:00'),(29,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c2b08a19422072c7a7646150c07b3c20','2022-10-28 04:14:54'),(30,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c2b08a19422072c7a7646150c07b3c20','2022-10-28 04:15:07'),(31,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c2b08a19422072c7a7646150c07b3c20','2022-10-28 04:15:18'),(32,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','cf3d88ef17f9e8eedfdf264621e967dd','2022-10-28 04:39:30'),(33,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','cf3d88ef17f9e8eedfdf264621e967dd','2022-10-28 04:39:44'),(34,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','cf3d88ef17f9e8eedfdf264621e967dd','2022-10-28 04:40:55'),(35,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','cf3d88ef17f9e8eedfdf264621e967dd','2022-10-28 04:43:03'),(36,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','ea5e3fa4be92b56d0a444fe321b54eb8','2022-10-28 04:51:11'),(37,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','ea5e3fa4be92b56d0a444fe321b54eb8','2022-10-28 04:54:02'),(38,'ryanhidayat@bankkalsel.co.id','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','20b14e3fe9e06d32bcf25e42cd2607f4','2022-10-28 10:43:31'),(39,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','105362212bf4af96c11497dcca04d7d8','2022-10-30 21:55:20'),(40,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','105362212bf4af96c11497dcca04d7d8','2022-10-30 21:55:33'),(41,'it.bankkalsel@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','5bf14dd6fb54e6a042cb4c239acd8804','2022-10-30 21:59:36'),(42,'it.bankkalsel@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','5bf14dd6fb54e6a042cb4c239acd8804','2022-10-30 21:59:45'),(43,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c230010804c77be4219c9f58ad785703','2022-10-31 01:12:57'),(44,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c230010804c77be4219c9f58ad785703','2022-10-31 01:13:07'),(45,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c230010804c77be4219c9f58ad785703','2022-10-31 01:13:19'),(46,'reey.an.hidayat@gmail.com','::1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36','c230010804c77be4219c9f58ad785703','2022-10-31 01:13:27');
+/*!40000 ALTER TABLE `auth_reset_attempts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_tokens`
+--
+
+DROP TABLE IF EXISTS `auth_tokens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_tokens` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `selector` varchar(255) NOT NULL,
+  `hashedValidator` varchar(255) NOT NULL,
+  `user_id` int(11) unsigned NOT NULL,
+  `expires` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `auth_tokens_user_id_foreign` (`user_id`),
+  KEY `selector` (`selector`),
+  CONSTRAINT `auth_tokens_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_tokens`
+--
+
+LOCK TABLES `auth_tokens` WRITE;
+/*!40000 ALTER TABLE `auth_tokens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `auth_tokens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_users_permissions`
+--
+
+DROP TABLE IF EXISTS `auth_users_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_users_permissions` (
+  `user_id` int(11) unsigned NOT NULL DEFAULT 0,
+  `permission_id` int(11) unsigned NOT NULL DEFAULT 0,
+  KEY `auth_users_permissions_permission_id_foreign` (`permission_id`),
+  KEY `user_id_permission_id` (`user_id`,`permission_id`),
+  CONSTRAINT `auth_users_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `auth_permissions` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `auth_users_permissions_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_users_permissions`
+--
+
+LOCK TABLES `auth_users_permissions` WRITE;
+/*!40000 ALTER TABLE `auth_users_permissions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `auth_users_permissions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `komik`
+--
+
+DROP TABLE IF EXISTS `komik`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `komik` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `judul` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `penulis` varchar(255) DEFAULT NULL,
+  `penerbit` varchar(255) DEFAULT NULL,
+  `sampul` varchar(255) DEFAULT NULL,
+  `created_at` varchar(255) DEFAULT NULL,
+  `updated_at` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `komik`
+--
+
+LOCK TABLES `komik` WRITE;
+/*!40000 ALTER TABLE `komik` DISABLE KEYS */;
+INSERT INTO `komik` VALUES (1,'Naruto','naruto','masasi','misoisi','naruto.png',NULL,NULL),(2,'One-Pieace','one-piece','tong','jder','onepice.png',NULL,NULL),(3,'asdas','asdas','dad','asdadads','sad','2022-04-14 00:11:13','2022-04-14 00:11:13'),(4,'asd','asd','asd','asd','asd','2022-10-25 19:51:39','2022-10-25 19:51:39');
+/*!40000 ALTER TABLE `komik` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrations` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `version` varchar(255) NOT NULL,
+  `class` varchar(255) NOT NULL,
+  `group` varchar(255) NOT NULL,
+  `namespace` varchar(255) NOT NULL,
+  `time` int(11) NOT NULL,
+  `batch` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (1,'2017-11-20-223112','Myth\\Auth\\Database\\Migrations\\CreateAuthTables','default','Myth\\Auth',1666751713,1);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sample_data`
+--
+
+DROP TABLE IF EXISTS `sample_data`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sample_data` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(250) NOT NULL,
+  `last_name` varchar(250) NOT NULL,
+  `age` varchar(30) NOT NULL,
+  `gender` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sample_data`
+--
+
+LOCK TABLES `sample_data` WRITE;
+/*!40000 ALTER TABLE `sample_data` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sample_data` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `username` varchar(30) DEFAULT NULL,
+  `fullname` varchar(255) DEFAULT NULL,
+  `user_image` varchar(255) DEFAULT 'undraw_profile.svg',
+  `hp` varchar(30) DEFAULT NULL,
+  `reset_hash` varchar(255) DEFAULT NULL,
+  `reset_at` datetime DEFAULT NULL,
+  `reset_expires` datetime DEFAULT NULL,
+  `activate_hash` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `status_message` varchar(255) DEFAULT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT 0,
+  `force_pass_reset` tinyint(1) NOT NULL DEFAULT 0,
+  `password_default` varchar(8) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  `password_hash` varchar(255) DEFAULT '0',
+  `fail_password` int(11) DEFAULT NULL,
+  `branch` varchar(5) DEFAULT NULL,
+  `branch_group` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=10028 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (9991,'ryanhid22ayat@bankkalse.co.id','admin_sales1','Admin Sales 1','a6.jpg',NULL,'',NULL,NULL,'','FALSE','',1,0,NULL,'2022-10-10 18:18:46','2022-10-10 18:18:46',NULL,'$2y$10$DsoQOPeYDXckExlRNPs4aOc4Fqt8pamqpG1yDCryoqh5AxoaJbc3C',0,'A991','I999'),(9992,'reey.an.hiday22at@gmail.com','admin_svr','Admin Supervisor','a6.jpg',NULL,'',NULL,NULL,'','FALSE','',1,0,NULL,'2022-10-10 18:18:46','2022-10-10 18:18:46',NULL,'$2y$10$DsoQOPeYDXckExlRNPs4aOc4Fqt8pamqpG1yDCryoqh5AxoaJbc3C',0,'I999','I999'),(9993,'ryanhidayat2@bankkalse.co.id','admin_sales2','Admin Sales 2','a6.jpg',NULL,'',NULL,NULL,'','FALSE','',1,0,NULL,'2022-10-10 18:18:46','2022-10-10 18:18:46',NULL,'$2y$10$DsoQOPeYDXckExlRNPs4aOc4Fqt8pamqpG1yDCryoqh5AxoaJbc3C',0,'A992','I999'),(10001,'reey.an.hida22yat@gmail.com','admin22','Admin','a6.jpg',NULL,'',NULL,NULL,'','FALSE','',1,0,NULL,'2022-10-10 18:18:46','2022-10-10 18:18:46',NULL,'$2y$10$DsoQOPeYDXckExlRNPs4aOc4Fqt8pamqpG1yDCryoqh5AxoaJbc3C',0,'A992','I999'),(10018,'reey.an.hida2222yat@gmail.com','farah',NULL,'undraw_profile.svg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,NULL,'2022-10-28 04:29:27','2022-10-30 21:54:19',NULL,'$2y$10$bxfrFv8nA61dNMOBanl4deoTLxb8taxISwZOz5Bm228ifT3hcvuze',NULL,NULL,NULL),(10020,'reey.22an.hidayat@gmail.com','kilo',NULL,'undraw_profile.svg',NULL,NULL,'2022-10-28 04:43:03',NULL,NULL,NULL,NULL,1,0,NULL,'2022-10-28 04:33:43','2022-10-28 04:43:03',NULL,'$2y$10$AXqC5InptG1H0e.UTOoyWOIP1EiYFpusTvWOp.ULh4ysAaMOBdvem',NULL,NULL,NULL),(10021,'reey.an.hid22ayat@gmail.com','lola',NULL,'undraw_profile.svg',NULL,NULL,'2022-10-30 21:55:34',NULL,NULL,NULL,NULL,1,0,NULL,'2022-10-28 04:47:41','2022-10-30 21:55:34',NULL,'$2y$10$8OH5iOU3ir/3nb6lj2CFFePQtCEZchG.I4rxpJttHN0jkZFQZT1W6',NULL,NULL,NULL),(10024,'ryanhidayat@bankkalsel.co.id','adminadmin222',NULL,'undraw_profile.svg',NULL,'7eae03356d40d8d118d81f23fea9f660',NULL,'2022-10-28 12:35:48','31c7f498cf082708bb1fae1d4d367e52',NULL,NULL,0,1,'Q82RjxVe','2022-10-28 11:35:48','2022-10-28 11:35:48',NULL,'$2y$10$hZ4aS6do3AcMK6X1sDdpZekdg1sCjq4lee6jMNYyh8XlkU.vDodQ6',NULL,NULL,NULL),(10025,'it.bankkalsel@gmail.com','ibnu',NULL,'undraw_profile.svg',NULL,NULL,'2022-10-30 21:59:47',NULL,NULL,'banned','TEST',1,0,'7tqLZA9X','2022-10-30 21:58:19','2022-10-31 09:45:10',NULL,'$2y$10$bxfrFv8nA61dNMOBanl4deoTLxb8taxISwZOz5Bm228ifT3hcvuze',NULL,NULL,NULL),(10026,'reey.an.h22idayat@gmail.com','123asdasd',NULL,'undraw_profile.svg',NULL,'8cc458f511125f905bf3f319f3487362',NULL,'2022-10-31 02:10:06',NULL,NULL,NULL,1,1,'eN2LEi1f','2022-10-31 01:10:06','2022-10-31 01:10:41',NULL,'$2y$10$i0vrZl4zU/aSPT9LLz8tR.2UmxDbXMgwDPfYeWNIFW.TmQLWx4bry',NULL,NULL,NULL),(10027,'reey.an.hidayat@gmail.com','123131231',NULL,'undraw_profile.svg',NULL,NULL,'2022-10-31 01:13:28',NULL,NULL,NULL,NULL,1,0,'5bPATFjH','2022-10-31 01:12:01','2022-10-31 01:13:28',NULL,'$2y$10$JES1s0ALOAMSRhROBW7XqeRLDr6F3pE4QEtnNTP6eZYFh4393zi0W',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-11-01 15:45:54
