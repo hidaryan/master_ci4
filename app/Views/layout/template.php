@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>APPS | Main view</title>
+    <title>Arsip NDE | <?= $title ?></title>
     <link href="<?= base_url(); ?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= base_url(); ?>/font-awesome/css/font-awesome.css" rel="stylesheet">
 

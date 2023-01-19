@@ -16,6 +16,7 @@ class UserController extends BaseController
     {
         $data = [
             'nav'               => 'manageUser',
+            'title'             => 'Pengelolaan User',
             'listCabang'        => $this->getListCabang(),
             'listGroup'         => $this->getListGroup()
         ];

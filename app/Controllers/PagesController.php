@@ -8,7 +8,8 @@ class PagesController extends BaseController
     {
 
         $data = [
-            'nav'    => 'dashboard'
+            'nav'    => 'dashboard',
+            'title'    => 'Dashboard'
         ];
         return view('pages/home', $data);
     }

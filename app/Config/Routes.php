@@ -34,9 +34,18 @@ $routes->setAutoRoute(true);
 
 
 $routes->get('/', 'PagesController::index');
+
+//USER MANAGEMENT
 $routes->get('/user', 'UserController::index',  ['filter' => 'permission:900,910']);
 $routes->get('/user/tableusers', 'UserController::tableUsers',  ['filter' => 'permission:900,910']);
 $routes->get('/user/profile', 'UserController::profile',  ['filter' => 'permission:900,920']);
+
+//NDE ROUTE
+$routes->get('/nde', 'NdeController::index',  ['filter' => 'permission:100,110']);
+$routes->get('/nde/inbox', 'NdeController::inbox',  ['filter' => 'permission:100,110']);
+$routes->get('/nde/outbox', 'NdeController::outbox',  ['filter' => 'permission:100,120']);
+$routes->get('/nde/download/(:any)/(:any)/(:any)/(:any)', 'NdeController::download_attchment/$1/$2/$3/$4',  ['filter' => 'permission:100,120']);
+$routes->get('/nde/downloadnde/(:any)/(:any)/(:any)/(:any)', 'NdeController::download_nde/$1/$2/$3/$4',  ['filter' => 'permission:100,120']);
 
 
 
