@@ -6,12 +6,14 @@ use App\Models\DatatableModel;
 use CodeIgniter\CLI\Console;
 use Myth\Auth\Entities\User;
 use Myth\Auth\Models\UserModel;
-use App\Models\CabangModel;
+use Myth\Auth\Password;
 
 use Config\Services;
 
 class UserController extends BaseController
 {
+
+
     public function index()
     {
         $data = [
@@ -175,13 +177,70 @@ class UserController extends BaseController
 
     public function profile()
     {
-
         $data = [
-            'nav'    => 'profileUser'
+            'nav'    => 'profileUser',
+            'title'  => 'Profile User'
         ];
-
-
-
         return view('users/profile', $data);
+    }
+
+    public function saveProfileUser()
+    {
+        if ($this->request->isAJAX()) {
+            //create parameter rules validasi
+            $rules = [
+                'email'        => 'required|valid_email',
+                'fullname'     => 'required',
+                'hp'           => 'required',
+                'password'     => 'required|min_length[8]|max_length[60]',
+                'password2'    => 'matches[password]',
+            ];
+
+            //cek validasi terlebih dahulu            
+            if (!$this->validate($rules)) {
+                $msg = ['error' => $this->validator->getErrors()];
+            } else {
+
+                $password = $this->request->getVar('password');
+
+                //jika user input password baru, lakukan hash terlebih dahulu
+                if ($password == 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx') {
+                    $password = user()->password_hash;
+                } else {
+                    $password = Password::hash($password);
+                }
+
+
+                $data_update = [
+                    'email'             => $this->request->getVar('email'),
+                    'fullname'          => $this->request->getVar('fullname'),
+                    'hp'                => $this->request->getVar('hp'),
+                    'password_hash'     => $password
+                ];
+
+                $msg = [
+                    'status'    => 'sukses',
+                    'msg'       => 'User berhasil dirubah'
+                ];
+                $userUpdate = model(UserModel::class);
+
+                $update = $userUpdate->updateUser(user()->id, $data_update);
+
+                //$update = $userUpdate->update(['id' => '10027'], $data_update);
+
+                if ($update == 1) {
+                    $msg = [
+                        'status'    => 'sukses',
+                        'msg'       => 'Profile ' . $update . user()->fullname . ' berhasil diperbahuri'
+                    ];
+                } else {
+                    $msg = [
+                        'status'    => 'gagal',
+                        'msg'       => 'Profile ' . $update  . user()->fullname . ' gagal diperbahuri'
+                    ];
+                }
+            }
+            echo json_encode($msg);
+        }
     }
 }

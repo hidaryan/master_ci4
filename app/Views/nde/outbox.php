@@ -91,16 +91,18 @@
                                 <canvas id="the-canvas" class="pdfcanvas border-left-right border-top-bottom b-r-md"></canvas>
                             </div>
 
+                            <div class="hr-line-dashed"></div>
 
 
-
-                            <div class="row pl-5">
-                                <div id="divlampiran">
-
+                            <div class="col">
+                                <div class="row pl-5">
+                                    <h3>Download NDE & Lampiran</h3>
+                                </div>
+                                <div class="row pl-5" id="divlampiran">
 
                                 </div>
-
                             </div>
+
 
 
                         </div>
@@ -242,20 +244,26 @@
                     });
 
                     //craete link lampiran
-
+                    var lokasi_surat = res.LOKASI_SURAT;
                     var lokasi_lampiran = res.LOKASI_ATTACHMENT;
                     var array_loklam = lokasi_lampiran.split(",")
-                    var link = " <h3>Lampiran</h3></br>";
+                    var link = '<table class="table table-striped" style="width: 50%">';
+
+                    let array_loksurat = lokasi_surat.split("/");
+                    link += '<tr><td style="width: 25%">NDE' + '</td>';
+                    link += '<td>:' + '<a href="downloadnde/' + array_loksurat[3] + '/' + array_loksurat[4] + '/' + array_loksurat[5] + '/' + array_loksurat[6] + '">' + array_loksurat[6] + '</a></td></tr>';
+
 
                     if (lokasi_lampiran != '') {
-
                         for (let index = 0; index < array_loklam.length; index++) {
                             let linklam = array_loklam[index];
                             let namafile = linklam.split("/");
-                            link += '<a href="download/' + namafile[3] + '/' + namafile[4] + '/' + namafile[5] + '/' + namafile[6] + '">' + namafile[6] + '</a></br>';
+                            link += '<tr><td>Lampiran ' + (index + 1) + '</td>';
+                            link += '<td>:' + '<a href="download/' + namafile[3] + '/' + namafile[4] + '/' + namafile[5] + '/' + namafile[6] + '">' + namafile[6] + '</a></td></tr>';
+
                         }
                     } else {
-                        link += 'tidak ada lampiran';
+                        link += '<tr><td>Tidak ada lampiran</td></tr>';;
                     }
 
                     $('#divlampiran').html(link);

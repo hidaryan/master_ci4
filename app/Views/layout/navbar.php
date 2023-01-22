@@ -55,7 +55,6 @@
                 <ul class="nav nav-second-level collapse">
                     <li <?= ($nav == 'inbox') ? 'class="active"' : ''; ?>><a href="<?= base_url('/nde/inbox') ?>">Surat Masuk</a></li>
                     <li <?= ($nav == 'outbox') ? 'class="active"' : ''; ?>><a href="<?= base_url('/nde/outbox') ?>">Surat Keluar</a></li>
-                    <li <?= ($nav == 'pdf') ? 'class="active"' : ''; ?>><a href="<?= base_url('/nde/pdf') ?>">Test PDF</a></li>
                 </ul>
             </li>
 

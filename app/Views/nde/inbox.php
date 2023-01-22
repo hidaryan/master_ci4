@@ -91,6 +91,7 @@
                                     <canvas id="the-canvas" class="pdfcanvas border-left-right border-top-bottom b-r-md"></canvas>
                                 </div>
                             </div>
+                            <div class="hr-line-dashed"></div>
                             <div class="col">
                                 <div class="row pl-5" id="divdisposisi"></div>
                                 <div class="row pl-5">
@@ -144,7 +145,7 @@
             "order": [],
 
             "ajax": {
-                "url": "<?php base_url() ?>/NdeController/tableInbox",
+                "url": "<?= base_url('/NdeController/tableInbox') ?>",
                 "type": "POST"
             },
             "columnDefs": [{
@@ -216,7 +217,7 @@
             $('#modalOpenNDE').modal('show');
 
             $.ajax({
-                url: "<?php base_url() ?>/NdeController/getNdeDisposisi",
+                url: "<?= base_url('NdeController/getNdeDisposisi') ?>",
                 type: 'get',
                 data: {
                     "ref": data[7]
@@ -226,10 +227,10 @@
 
 
                     //Tampilkan Disposisi
-                    var tabledispos = '<h3>Disposisi</h3><table class="table table-striped">';
+                    var tabledispos = '<h3>Disposisi</h3><table class="table table-striped" style="width:100%">';
                     for (let i = 0; i < res.disposisi.length; i++) {
                         let array_agenda = res.disposisi[i].AGENDA_NUMBER.split("/");
-                        tabledispos += '<tr><td>' + res.disposisi[0].TANGGAL_DISPOSISI + '</td>' +
+                        tabledispos += '<tr><td style="width :10%">' + res.disposisi[0].TANGGAL_DISPOSISI + '</td>' +
                             '<td>' + array_agenda[0] + '</td>' +
                             '<td>' + res.disposisi[i].PENERIMA + '</td>' +
                             '<td>' + res.disposisi[i].AKSI + '</td></tr>';

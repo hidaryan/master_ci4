@@ -43,6 +43,7 @@ $routes->get('/user/profile', 'UserController::profile',  ['filter' => 'permissi
 //NDE ROUTE
 $routes->get('/nde', 'NdeController::index',  ['filter' => 'permission:100,110']);
 $routes->get('/nde/inbox', 'NdeController::inbox',  ['filter' => 'permission:100,110']);
+//$routes->get('/nde/inbox/(:any)', 'NdeController::inbox',  ['filter' => 'permission:100,110']);
 $routes->get('/nde/outbox', 'NdeController::outbox',  ['filter' => 'permission:100,120']);
 $routes->get('/nde/download/(:any)/(:any)/(:any)/(:any)', 'NdeController::download_attchment/$1/$2/$3/$4',  ['filter' => 'permission:100,120']);
 $routes->get('/nde/downloadnde/(:any)/(:any)/(:any)/(:any)', 'NdeController::download_nde/$1/$2/$3/$4',  ['filter' => 'permission:100,120']);
